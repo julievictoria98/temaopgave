@@ -1,5 +1,5 @@
 ---
-
+const employeeData = await fetch("https://raw.githubusercontent.com/julievictoria98/frontend-design/main/resources/json/employees.json").then((res) => res.json()); 
 ---
 
 <html lang="en">
@@ -12,5 +12,13 @@
 	</head>
 	<body>
 		<h1>Astro</h1>
+		<p></p>
+		{
+		employeeData.map((employee) => (
+			<div>
+				<h2>{employee.name}</h2>
+				<p>{employee.title}</p>
+			</div>
+		))}
 	</body>
 </html>
