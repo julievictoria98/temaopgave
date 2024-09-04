@@ -11,7 +11,7 @@
   --bg-color: white;
 }
 @layer global {
-  .main_layout {
+  article {
     --gap: clamp(1rem, 6vw, 3rem);
     --full: minmax(var(--gap), 1fr);
     --content: min(calc(1198px - var(--gap) * 2));

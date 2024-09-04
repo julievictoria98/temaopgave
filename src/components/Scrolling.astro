@@ -1,10 +1,9 @@
 ---
 import '../styles/style.css'
 const projectionsData = await fetch("https://raw.githubusercontent.com/julievictoria98/frontend-design/main/resources/json/projections.json").then((res) => res.json());
-console.log(projectionsData);
 ---
 
-<div class="full">
+<article class="full">
   
  <h2>Financial Projections</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -21,17 +20,16 @@ console.log(projectionsData);
     </li>
   ))}
 </ul>
-</div>
+</article>
 
 <style>
     @layer components{
       
-   div {
+   article {
             background-color: var(--secondary-color-1);
             padding: 5rem 0;
 
             &>*{
-               padding-inline: max(1rem, 50% - var(--content) / 2);
             }
 
         }
@@ -44,6 +42,8 @@ console.log(projectionsData);
     gap: 10rem;
     align-items: flex-start;
     overflow-x: auto;
+     padding-inline: max(1rem, 50% - var(--content) / 2); 
+
     
   }
 
