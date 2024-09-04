@@ -1,12 +1,63 @@
 ---
 import '../styles/style.css'
-const projectionsData = await fetch("https://raw.githubusercontent.com/julievictoria98/frontend-design/main/resources/json/projections.json").then((res) => res.json());
+const valueData = await fetch("https://raw.githubusercontent.com/julievictoria98/frontend-design/main/resources/json/corevalues.json").then((res) => res.json());
 ---
 
-<article>
-    <h2></h2>
-    <p></p>
-    <div>
-
+<article class="full">
+    <div class="core_text_flex">
+        <div>
+            <div>
+    <h2>{valueData.title}</h2>
+    <p>{valueData.subtitle}</p>
     </div>
+    <button>Get in Touch</button>
+    </div>
+    <ul>
+  {valueData.values.map((value) => (
+    <li>
+      <h3>{value.title}</h3>
+      <p>{value.description}</p>
+    </li>
+  ))}
+</ul>
+</div>
 </article>
+
+<style>
+    @layer components{
+    article{
+        background-color: var(--primary-color-3);
+        color: orange;
+    }
+    ul{
+        display:flex;
+        flex-wrap: wrap;
+        gap:2rem;
+         width: 100%;
+/*        
+        & > *{
+             background-color: var(--secondary-color-2);
+             border-radius: 1rem;
+             padding-inline: 0.5rem;
+            flex:1;
+        }  */
+    }
+
+    ul > li {
+    background-color: var(--secondary-color-2);
+    border-radius: 1rem;
+    padding-inline: 0.5rem;
+    flex-basis: 15rem; /* Set a base size */
+}
+
+    .core_text_flex{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        
+    }
+    p{
+        color: orange;
+    }
+    }
+</style>

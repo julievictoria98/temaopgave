@@ -1,4 +1,5 @@
 ---
+import CoreValues from "../components/CoreValues.astro";
 import Scrolling from "../components/Scrolling.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/style.css";
@@ -26,7 +27,8 @@ const employeeData = await fetch("https://raw.githubusercontent.com/julievictori
 			</div>
 		))} -->
 		
-			<Scrolling />
+			  <Scrolling />  
+			<CoreValues />
 
 		</MainLayout>
 

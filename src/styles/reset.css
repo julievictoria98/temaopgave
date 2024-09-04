@@ -23,6 +23,9 @@ body {
   margin: unset;
   min-height: 100svh;
 }
+body * {
+  list-style: none;
+}
 
 ol[role="list"],
 ul[role="list"] {

@@ -14,7 +14,7 @@
   article {
     --gap: clamp(1rem, 6vw, 3rem);
     --full: minmax(var(--gap), 1fr);
-    --content: min(calc(1198px - var(--gap) * 2));
+    --content: minmax(calc(var(--gap) * 2), 74.875rem);
 
     display: grid;
     grid-template-columns:
