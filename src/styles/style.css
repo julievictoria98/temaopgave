@@ -1,0 +1,53 @@
+@layer reset, global, components;
+
+@import "./reset.css" layer(reset);
+
+:root {
+  --primary-color-1: #ffcc4a;
+  --primary-color-2: #4eaf4e;
+  --primary-color-3: #181818;
+  --secondary-color-1: #f5f5f5;
+  --secondary-color-2: #ffff;
+  --bg-color: white;
+}
+@layer global {
+  .main_layout {
+    --gap: clamp(1rem, 6vw, 3rem);
+    --full: minmax(var(--gap), 1fr);
+    --content: min(calc(1198px - var(--gap) * 2));
+
+    display: grid;
+    grid-template-columns:
+      [full-start] var(--full)
+      [content-start] var(--content) [content-end]
+      var(--full) [full-end];
+
+    & > * {
+      grid-column: content;
+    }
+
+    .content {
+      grid-column: content;
+    }
+
+    .full {
+      grid-column: full;
+    }
+
+    & > * {
+      background-color: var(--bg-color), var(--secondary-color-2);
+    }
+
+    & > * + * {
+      margin-block-start: 1.5rem;
+    }
+
+    h1,
+    h2 {
+      font-size: 2rem;
+    }
+    p {
+      color: var(--primary-color-3);
+    }
+  }
+}
