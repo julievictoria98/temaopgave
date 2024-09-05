@@ -1,53 +1,66 @@
 ---
 import '../styles/style.css'
+import { Icon } from 'astro-icon/components'
+
 const valueData = await fetch("https://raw.githubusercontent.com/julievictoria98/frontend-design/main/resources/json/corevalues.json").then((res) => res.json());
 ---
 
 <article class="full">
     <div class="core_text_flex">
-        <div>
-            <div>
-    <h2>{valueData.title}</h2>
-    <p>{valueData.subtitle}</p>
+        <div class="text">
+            <h1>Growing with our clints</h1>
+            <h2>{valueData.title}</h2>
+            <p>{valueData.subtitle}</p>
+        </div>
+        <button>Get in Touch</button>
+        <ul class="card">
+            {valueData.values.map((value) => (
+                
+                <li class="value_card_flex">
+                <div class="icon">
+                    <Icon name="layers"/>
+               </div>
+                <h3 class="bold">{value.title}</h3>
+                <p>{value.description}</p>
+                <button>Read more</button>
+                </li>
+            ))}
+            
+        </ul>
     </div>
-    <button>Get in Touch</button>
-    </div>
-    <ul>
-  {valueData.values.map((value) => (
-    <li>
-      <h3>{value.title}</h3>
-      <p>{value.description}</p>
-    </li>
-  ))}
-</ul>
-</div>
 </article>
 
 <style>
     @layer components{
     article{
-        background-color: var(--primary-color-3);
-        color: orange;
-    }
+          --bg-color: var(--primary-color-3);
+      & *:not(ul):not(ul *) {
+        color: var(--secondary-color-2);
+}
+        }
+
+
+    
     ul{
         display:flex;
         flex-wrap: wrap;
-        gap:2rem;
-         width: 100%;
-/*        
-        & > *{
-             background-color: var(--secondary-color-2);
-             border-radius: 1rem;
-             padding-inline: 0.5rem;
-            flex:1;
-        }  */
+        gap:2.25rem;
+        align-items: flex-start;
+        padding: 0;
+
+        
+
     }
 
     ul > li {
-    background-color: var(--secondary-color-2);
+
+     background-color: var(--secondary-color-2); 
     border-radius: 1rem;
-    padding-inline: 0.5rem;
-    flex-basis: 15rem; /* Set a base size */
+    padding: 1.2rem; 
+    box-sizing: border-box;
+     max-width: 15rem; */
+     align-self: flex-start
+     
 }
 
     .core_text_flex{
@@ -55,9 +68,29 @@ const valueData = await fetch("https://raw.githubusercontent.com/julievictoria98
         flex-direction: column;
         gap: 2rem;
         
+            /* align-items: flex-start; Align items to the start to avoid uniform height */
+            
     }
     p{
-        color: orange;
+        /* color: var(--primary-color-3); */
     }
+
+    button{
+        /* color:var(--primary-color-3); */
+    }
+
+    .icon{
+        width:3rem;
+    }
+
+    .value_card_flex{
+        display: flex;
+        flex-direction: column;
+        max-width: 20rem;
+        gap: 1rem;
+        padding: 2rem;
+        align-items: flex-start;
+    }
+
     }
 </style>

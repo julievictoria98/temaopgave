@@ -8,9 +8,34 @@
   --primary-color-3: #181818;
   --secondary-color-1: #f5f5f5;
   --secondary-color-2: #ffff;
-  --bg-color: white;
+  --bg-color: var(--secondary-color-2);
+  --font-color: var(--primary-color-3);
 }
 @layer global {
+  :root {
+    --step--1: clamp(0.5rem, 0.3957rem + 0.5217vw, 0.8rem);
+    --step-0: clamp(0.625rem, 0.4946rem + 0.6522vw, 1rem);
+    --step-1: clamp(0.7813rem, 0.6182rem + 0.8152vw, 1.25rem);
+    --step-2: clamp(0.9766rem, 0.7728rem + 1.019vw, 1.5625rem);
+    --step-3: clamp(1.2207rem, 0.9659rem + 1.2738vw, 1.9531rem);
+    --step-4: clamp(1.5259rem, 1.2074rem + 1.5922vw, 2.4414rem);
+  }
+  h1 {
+    font-size: var(--step-4);
+  }
+
+  h2 {
+    font-size: var(--step-2);
+  }
+
+  h3 {
+    font-size: var(--step-1);
+  }
+
+  p {
+    font-size: var(--step--0);
+  }
+
   article {
     --gap: clamp(1rem, 6vw, 3rem);
     --full: minmax(var(--gap), 1fr);
@@ -35,19 +60,22 @@
     }
 
     & > * {
-      background-color: var(--bg-color), var(--secondary-color-2);
+      background-color: var(--bg-color);
+    }
+    & * {
+      color: var(--font-color);
     }
 
     & > * + * {
       margin-block-start: 1.5rem;
     }
 
-    h1,
-    h2 {
-      font-size: 2rem;
-    }
-    p {
+    /* p {
       color: var(--primary-color-3);
+    } */
+
+    .bold {
+      font-weight: 500;
     }
   }
 }

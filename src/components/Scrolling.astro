@@ -5,7 +5,7 @@ const projectionsData = await fetch("https://raw.githubusercontent.com/julievict
 
 <article class="full">
   
- <h2>Financial Projections</h2>
+ <h1>Financial Projections</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
         ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -15,7 +15,7 @@ const projectionsData = await fetch("https://raw.githubusercontent.com/julievict
 <ul class="full">
   {projectionsData.values.map((projection) => (
     <li>
-      <h3>{projection.title}</h3>
+      <h2 class="bold">{projection.title}</h2>
       <p>{projection.description}</p>
     </li>
   ))}
@@ -26,7 +26,7 @@ const projectionsData = await fetch("https://raw.githubusercontent.com/julievict
     @layer components{
       
    article {
-            background-color: var(--secondary-color-1);
+            --bg-color: var(--secondary-color-1);
             padding: 5rem 0;
 
             &>*{
