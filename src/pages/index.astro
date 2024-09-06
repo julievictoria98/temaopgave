@@ -2,6 +2,7 @@
 import CoreValues from "../components/CoreValues.astro";
 import Scrolling from "../components/Scrolling.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import Image from "../components/basics/Image.astro";
 import "../styles/style.css";
 
 const employeeData = await fetch("https://raw.githubusercontent.com/julievictoria98/frontend-design/main/resources/json/employees.json").then((res) => res.json());
@@ -29,6 +30,7 @@ const employeeData = await fetch("https://raw.githubusercontent.com/julievictori
 		
 			  <Scrolling />  
 			<CoreValues />
+		<Image />
 
 		</MainLayout>
 

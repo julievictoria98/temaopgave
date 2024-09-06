@@ -1,0 +1,32 @@
+---
+const { label } = Astro.props
+---
+
+<div class={label}>
+    <slot />
+</div>
+
+<style>
+    div{
+        display: inline-block;
+        background-color: var(--primary-color-1);
+        border-radius: 25px;
+        /* padding: 0.2rem; */
+        font-size: small;
+        padding: 0.2rem 0.5rem;
+
+
+
+    }
+
+    .yellow{
+        background-color: var(--primary-color-1);
+        color: var(--primary-color-3);
+    }
+
+    .white{
+        background-color: var(--secondary-color-3);
+        color: var(--primary-color-3);
+    }
+
+</style>

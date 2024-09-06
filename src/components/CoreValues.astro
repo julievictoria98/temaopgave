@@ -1,5 +1,6 @@
 ---
 import  RoundButton from './RoundButton.astro'
+import Label from './basics/Label.astro'
 import '../styles/style.css'
 import { Icon } from 'astro-icon/components'
 
@@ -11,7 +12,7 @@ const valueData = await fetch("https://raw.githubusercontent.com/julievictoria98
         <div class="only_text_flex">
         <div class="text">
             <h1>{valueData.title}</h1>
-            <h2>GROWING WITH OUT</h2>
+            <Label label="yellow">GROWING WITH OUR CLITENS</Label>
             <p>{valueData.subtitle}</p>
         </div>
         <RoundButton color="red">Get in touch</RoundButton>
@@ -28,6 +29,7 @@ const valueData = await fetch("https://raw.githubusercontent.com/julievictoria98
                 <button>Read more</button>
                 </li>
             ))}
+            
             
         </ul>
     </div>
@@ -65,24 +67,24 @@ const valueData = await fetch("https://raw.githubusercontent.com/julievictoria98
     }
 
     ul > li {
-
-     background-color: var(--secondary-color-2); 
-    border-radius: 1rem;
-    padding: 1.2rem; 
-    
-    box-sizing: border-box;
-     max-width: 15rem; */
-     align-self: flex-start
+        background-color: var(--secondary-color-2); 
+        border-radius: 1rem;
+        padding: 1.2rem; 
+        box-sizing: border-box;
+        max-width: 15rem; */
+        align-self: flex-start
      
 }
 
     .core_text_flex{
         display: flex;
         flex-direction: column;
-        gap: 3rem;            
+        gap: 3rem; 
+
     }
     .icon{
         width:3rem;
+        
     }
 
     .value_card_flex{
@@ -105,8 +107,9 @@ const valueData = await fetch("https://raw.githubusercontent.com/julievictoria98
         }
 
     }
+    }
 
-    h2{
+    /* /* h2{
         display: inline-block;
         background-color: var(--primary-color-1);
         border-radius: 25px;
@@ -114,7 +117,7 @@ const valueData = await fetch("https://raw.githubusercontent.com/julievictoria98
         font-size: medium;
 
         
-    }
+    } 
 
-    }
+    } */
 </style>
