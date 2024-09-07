@@ -1,5 +1,7 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import Image from "../../components/basics/Image.astro";
+import "../../styles/style.css";
 export async function getStaticPaths() {
   const EmployeeData = await fetch(
     "https://raw.githubusercontent.com/julievictoria98/frontend-design/main/resources/json/employees.json"
@@ -13,7 +15,8 @@ export async function getStaticPaths() {
   });
 }
 const { employee } = Astro.props;
-const { name, img, slug } = employee;
+const { name, img, slug, title } = employee;
+import { Icon } from "astro-icon/components";
 ---
 
 <head>
@@ -26,6 +29,116 @@ const { name, img, slug } = employee;
 </head>
 
 <article>
-  <h1 transition:name=`name-${slug}`>{name}</h1>
-  <img src={img} alt="" transition:name=`img-${slug}` />
+  <Image URL={img} classname="image_style_1" transition:name=`img-${slug}` />
+  <!-- <img src={img} alt="" transition:name=`img-${slug}` /> -->
+  <div>
+    <div>
+      <h1 transition:name=`name-${slug}`>{name}</h1>
+      <div class="icons">
+        <Icon name="facebook" />
+        <Icon name="twitter" />
+        <Icon name="instagram" />
+      </div>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas odio
+      ipsa sequi rerum numquam! Praesentium autem repudiandae corrupti culpa
+      eum, corporis obcaecati saepe, nemo quod, aperiam explicabo porro eaque
+      beatae!
+    </p>
+    <h2>Past experinces</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse, molestiae
+      excepturi provident quo repellat unde voluptatum quod reprehenderit
+      maiores magni sit. Nisi veniam atque optio alias natus ex eum
+      necessitatibus.
+    </p>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates
+      dolorem possimus eum officiis vel, mollitia placeat veritatis deleniti.
+      Maxime quis ipsum nam aperiam vel repellat dolorum deserunt est unde
+      consectetur!
+    </p>
+  </div>
 </article>
+
+<style>
+  @layer components {
+    article {
+      display: flex;
+      flex-direction: row;
+      gap: 5.563rem;
+      margin-top: 5rem;
+      padding: 2rem;
+
+      & p:first-of-type {
+        padding-bottom: 4rem;
+        border-bottom: 2px solid rgb(208, 206, 206);
+      }
+
+      & > :nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding-left: 0rem;
+
+        & > :first-child {
+          display: flex;
+          flex-direction: row;
+          gap: 15rem;
+
+          & > * {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+          }
+        }
+      }
+    }
+
+    h1,
+    h2 {
+      font-size: var(--step-4);
+    }
+
+    .icons {
+      width: 10rem;
+    }
+
+    @media (max-width: 768px) {
+      article {
+        display: flex;
+        flex-direction: column;
+        gap: 5.563rem;
+        margin-top: 5rem;
+        padding: 2rem;
+
+        & p:first-of-type {
+          padding-bottom: 4rem;
+          border-bottom: 2px solid rgb(208, 206, 206);
+        }
+
+        & > :nth-child(2) {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+          padding-left: 0rem;
+
+          & > :first-child {
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+
+            & > * {
+              display: flex;
+              flex-direction: row;
+              gap: 2rem;
+              max-width: 100rem;
+              align-self: center;
+            }
+          }
+        }
+      }
+    }
+  }
+</style>
