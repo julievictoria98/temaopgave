@@ -1,0 +1,74 @@
+---
+import EmployeeCard from "./EmployeeCard.astro";
+
+const EmployeeData = await fetch(
+  "https://raw.githubusercontent.com/julievictoria98/frontend-design/main/resources/json/employees.json"
+).then((res) => res.json());
+---
+
+<article>
+  <div class="main_flex">
+    {
+      EmployeeData.map((employee) => {
+        return <EmployeeCard employee={employee} />;
+      })
+    }
+  </div>
+</article>
+
+<style>
+  @layer components {
+    article > :first-child {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: center;
+      gap: 2rem;
+      row-gap: 5rem;
+      border-radius: 1rem;
+    }
+
+    /* img {
+      border-radius: 10%;
+      object-fit: cover;
+      
+    }
+
+    .employee_card {
+     
+      background-color: var(--secondary-color-1);
+      color: var(--secondary-color-1);
+      width: 20rem;
+     
+      cursor: pointer;
+
+      &:has(img) {
+        padding: 0rem;
+      }
+
+      &:has(img) .content {
+        padding: 1rem;
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      gap: 1.5rem;
+      align-items: center;
+      text-align: center;
+    }
+
+    .icons {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+    h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    } */
+  }
+</style>

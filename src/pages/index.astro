@@ -3,36 +3,35 @@ import CoreValues from "../components/CoreValues.astro";
 import Scrolling from "../components/Scrolling.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import Image from "../components/basics/Image.astro";
+import EmployeeCards from "../components/employee/EmployeeCards.astro";
 import "../styles/style.css";
 
-const employeeData = await fetch("https://raw.githubusercontent.com/julievictoria98/frontend-design/main/resources/json/employees.json").then((res) => res.json());
+// const employeeData = await fetch(
+//   "https://raw.githubusercontent.com/julievictoria98/frontend-design/main/resources/json/employees.json"
+// ).then((res) => res.json());
 ---
 
-
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<MainLayout>
-		
-		<!-- {
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <MainLayout>
+      <!-- {
 		employeeData.map((employee) => (
 			<div>
 				<h2>{employee.name}</h2>
 				<p>{employee.title}</p>
 			</div>
 		))} -->
-		
-			  <Scrolling />  
-			<CoreValues />
-		<Image />
-
-		</MainLayout>
-
-	</body>
+      <Scrolling />
+      <CoreValues />
+      <EmployeeCards />
+      <Image />
+    </MainLayout>
+  </body>
 </html>

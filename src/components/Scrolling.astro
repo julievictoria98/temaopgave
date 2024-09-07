@@ -1,70 +1,67 @@
 ---
-import '../styles/style.css'
-const projectionsData = await fetch("https://raw.githubusercontent.com/julievictoria98/frontend-design/main/resources/json/projections.json").then((res) => res.json());
+import "../styles/style.css";
+const projectionsData = await fetch(
+  "https://raw.githubusercontent.com/julievictoria98/frontend-design/main/resources/json/projections.json"
+).then((res) => res.json());
 ---
 
 <article class="full">
-  
- <h1>Financial Projections</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-        aliquip ex ea commodo consequat.
-    </p>
-   
-<ul class="full">
-  {projectionsData.values.map((projection) => (
-    <li>
-      <h2 class="bold">{projection.title}</h2>
-      <p>{projection.description}</p>
-    </li>
-  ))}
-</ul>
+  <h1>Financial Projections</h1>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat.
+  </p>
+
+  <ul class="full">
+    {
+      projectionsData.values.map((projection) => (
+        <li>
+          <h2 class="bold">{projection.title}</h2>
+          <p>{projection.description}</p>
+        </li>
+      ))
+    }
+  </ul>
 </article>
 
 <style>
-    @layer components{
-      
-   article {
-            --bg-color: var(--secondary-color-1);
-            padding: 5rem 0;
+  @layer components {
+    article {
+      --bg-color: var(--secondary-color-1);
+      padding: 5rem 0;
 
-            &>*{
-            }
-
-        }
+      & > * {
+      }
+    }
 
     ul {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    flex-direction: row;
-    gap: 10rem;
-    align-items: flex-start;
-    overflow-x: auto;
-    padding-left:10rem;
-    /* padding-inline: max(1rem, 50% - var(--content) / 2); 
+      list-style: none;
+      display: flex;
+      padding: 0;
+      flex-direction: row;
+      gap: 10rem;
+      align-items: flex-start;
+      overflow-x: auto;
+      padding-left: 10rem;
+      /* padding-inline: max(1rem, 50% - var(--content) / 2); 
      padding-inline: calc(max(1rem, 50% - 10rem)); */
-     /* padding-left: calc((100vw - var(--content)) / 2); Adjust the left padding  */
-
-    
-  }
-
-
-  ul > * {
-     display: flex;
-flex-direction: column;
-padding: 2.75rem 2.1875rem;
-   
-    background-color: rgb(187, 187, 187);
-   min-width: 25rem;
-    border-radius: 1rem;
-    margin-bottom: 2rem;
-  }
+      /* padding-left: calc((100vw - var(--content)) / 2); Adjust the left padding  */
     }
 
-    p{
-        color:#595566
+    ul > * {
+      display: flex;
+      flex-direction: column;
+      padding: 2.75rem 2.1875rem;
+
+      background-color: rgb(187, 187, 187);
+      min-width: 25rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
     }
-  
+  }
+  p {
+    color: #595566;
+  }
 </style>

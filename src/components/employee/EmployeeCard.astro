@@ -1,0 +1,96 @@
+---
+import { Icon } from "astro-icon/components";
+const { employee } = Astro.props;
+// const { name, img, description, slug } = employee;
+---
+
+<div class="employee_card">
+  <a href={`employees/${employee.slug}`}>
+    <img
+      src={employee.img}
+      alt={employee.name}
+      transition:name={`img-${employee.slug}`}
+    />
+    <div class="content">
+      <h1>{employee.name}</h1>
+      <p>{employee.description}</p>
+      <div class="icons">
+        <div>
+          <Icon name="facebook" />
+        </div>
+        <div>
+          <Icon name="twitter" />
+        </div>
+        <div>
+          <Icon name="instagram" />
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <style>
+    @layer components {
+      article > :first-child {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: center;
+        gap: 2rem;
+        row-gap: 5rem;
+        border-radius: 1rem;
+      }
+
+      img {
+        border-radius: 10%;
+        object-fit: cover;
+        /* max-width: 10rem; */
+      }
+
+      .employee_card {
+        /* display: flex;
+    flex-direction: column; */
+        /* padding: 2rem; */
+        border-radius: 1rem;
+        background-color: var(--secondary-color-1);
+        color: var(--secondary-color-1);
+        width: 20rem;
+        /* gap: 10rem; */
+        /* align-items: center;
+    text-align: center; */
+        cursor: pointer;
+
+        &:has(img) {
+          padding: 0rem;
+        }
+
+        &:has(img) .content {
+          padding: 1rem;
+        }
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        align-items: center;
+        text-align: center;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .icons {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: space-between;
+      }
+      h1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+  </style>
+</div>
