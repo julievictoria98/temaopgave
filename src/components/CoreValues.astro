@@ -7,7 +7,7 @@ import { Icon } from 'astro-icon/components'
 const valueData = await fetch("https://raw.githubusercontent.com/julievictoria98/frontend-design/main/resources/json/corevalues.json").then((res) => res.json());
 ---
 
-<article class="full">
+<article class="grid-view">
     <div class="core_text_flex">
         <div class="only_text_flex">
         <div class="text">
@@ -38,7 +38,8 @@ const valueData = await fetch("https://raw.githubusercontent.com/julievictoria98
 <style>
     @layer components{
     article{
-          --bg-color: var(--primary-color-3);
+        background-color: aqua;
+          /* --bg-color: red; */
           padding-top: 5rem;
       /* & *:not(ul):not(ul *) {
         --font-color: var(--secondary-color-2);
@@ -80,8 +81,8 @@ const valueData = await fetch("https://raw.githubusercontent.com/julievictoria98
         display: flex;
         flex-direction: column;
         gap: 3rem; 
-
     }
+
     .icon{
         width:3rem;
         

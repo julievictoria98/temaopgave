@@ -6,7 +6,7 @@ const EmployeeData = await fetch(
 ).then((res) => res.json());
 ---
 
-<article>
+<article class="grid-view">
   <div class="main_flex">
     {
       EmployeeData.map((employee) => {

@@ -1,26 +1,37 @@
 ---
+
 ---
 
-<figure class="image_style_1">
-<img  src="https://staey.dk/cdn/shop/articles/IG_Post_6.jpg?v=1634474132" alt="Nature" width="200" height="200" />
-</figure>
-<figure class="image_style_2" >
-<img src="https://staey.dk/cdn/shop/articles/IG_Post_6.jpg?v=1634474132" alt="Nature" width="200" height="200" />
-</figure>
+<article class="grid-view">
+  <figure class="image_style_1">
+    <img
+      src="https://staey.dk/cdn/shop/articles/IG_Post_6.jpg?v=1634474132"
+      alt="Nature"
+      width="200"
+      height="200"
+    />
+  </figure>
+  <figure class="image_style_2">
+    <img
+      src="https://staey.dk/cdn/shop/articles/IG_Post_6.jpg?v=1634474132"
+      alt="Nature"
+      width="200"
+      height="200"
+    />
+  </figure>
+</article>
 <style>
-    figure{
+  figure {
+    & > * {
+      border-radius: 4rem;
+      max-width: 25rem;
+    }
 
-        &>*{
-          border-radius: 4rem;
-          max-width: 25rem;
+    margin-inline: auto;
+    display: block;
+    position: relative;
 
-        }
-
-        margin-inline:auto;
-        display: block;
-        position: relative;
-
-        /* &::before{
+    /* &::before{
             content: "";
             background-color: rgb(21, 117, 29);
             border-radius: 2rem;
@@ -33,9 +44,9 @@
             left: -10%;
             z-index: -1;
         } */
-    }
+  }
 
-/*     
+  /*     
         .style1::before{
             content: "";
             background-color: rgb(21, 117, 29);
@@ -61,58 +72,57 @@
         left: 20rem;
     } */
 
-    .image_style_1::before {
-         content: "";
-            background-color: var(--primary-color-2);
-            border-radius: 2rem;
+  .image_style_1::before {
+    content: "";
+    background-color: var(--primary-color-2);
+    border-radius: 2rem;
 
-            font-size: 3rem;
-            position: absolute;
-            width: 10rem;
-            height: 10rem;
-            top: -5%;
-            left: 70%;
-            z-index: -1;
-}
+    font-size: 3rem;
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    top: -5%;
+    left: 70%;
+    z-index: -1;
+  }
 
-    .image_style_1::after {
-         content: "";
-         background-image: url(../../images/pattern.svg);
-            border-radius: 2rem;
+  .image_style_1::after {
+    content: "";
+    background-image: url(../../images/pattern.svg);
+    border-radius: 2rem;
 
-            font-size: 3rem;
-            position: absolute;
-            width: 20.487rem;
-            height: 20.487rem;
-            top: -25%;
-            left: 45%;
-            z-index: -2;
-}
-
-.image_style_2::before {
-        content: "";
-             background-image: url(../../images/pattern.svg); 
-            border-radius: 1.5rem;
-
-            font-size: 3rem;
-            position: absolute;
-           width: 20.487rem;
+    font-size: 3rem;
+    position: absolute;
+    width: 20.487rem;
     height: 20.487rem;
-             top: 35%;
-            left: -15%;  
-            z-index: -2;
-}
-.image_style_2::after {
-            content: "";
-            background-color: var(--primary-color-2);            border-radius: 1.5rem;
-            font-size: 3rem;
-            position: absolute;
-            width: 10rem;
-            height: 10rem;
-             top: 70%;
-            left: -5%;  
-            z-index: -1;
-}
+    top: -25%;
+    left: 45%;
+    z-index: -2;
+  }
 
+  .image_style_2::before {
+    content: "";
+    background-image: url(../../images/pattern.svg);
+    border-radius: 1.5rem;
 
+    font-size: 3rem;
+    position: absolute;
+    width: 20.487rem;
+    height: 20.487rem;
+    top: 35%;
+    left: -15%;
+    z-index: -2;
+  }
+  .image_style_2::after {
+    content: "";
+    background-color: var(--primary-color-2);
+    border-radius: 1.5rem;
+    font-size: 3rem;
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    top: 70%;
+    left: -5%;
+    z-index: -1;
+  }
 </style>

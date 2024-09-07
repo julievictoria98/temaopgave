@@ -1,19 +1,15 @@
 ---
 import { Icon } from "astro-icon/components";
 const { employee } = Astro.props;
-// const { name, img, description, slug } = employee;
+const { name, img, description, slug } = employee;
 ---
 
 <div class="employee_card">
-  <a href={`employees/${employee.slug}`}>
-    <img
-      src={employee.img}
-      alt={employee.name}
-      transition:name={`img-${employee.slug}`}
-    />
+  <a data-view-transition href={`employees/${slug}`}>
+    <img src={img} alt={name} transition:name=`img-${slug}` />
     <div class="content">
-      <h1>{employee.name}</h1>
-      <p>{employee.description}</p>
+      <h1 transition:name=`name-${slug}`>{name}</h1>
+      <p>{description}</p>
       <div class="icons">
         <div>
           <Icon name="facebook" />

@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 export async function getStaticPaths() {
   const EmployeeData = await fetch(
     "https://raw.githubusercontent.com/julievictoria98/frontend-design/main/resources/json/employees.json"
@@ -12,14 +13,19 @@ export async function getStaticPaths() {
   });
 }
 const { employee } = Astro.props;
+const { name, img, slug } = employee;
 ---
 
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <title>Astro</title>
+  <ViewTransitions />
+</head>
+
 <article>
-  <!-- <img src={employee.img} alt={employee.name} transition:name={slug} />
-  <div class="content">
-    <h1>{employee.name}</h1>
-    <p>{employee.description}</p>
-  </div> -->
-  <h1>{employee.name}</h1>
-  <img src={employee.img} alt="" transition:name={`img-${employee.slug}`} />
+  <h1 transition:name=`name-${slug}`>{name}</h1>
+  <img src={img} alt="" transition:name=`img-${slug}` />
 </article>
