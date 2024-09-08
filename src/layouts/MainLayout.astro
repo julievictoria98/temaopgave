@@ -1,11 +1,12 @@
 ---
+import BurgerMenu from "../components/employee/BurgerMenu.astro";
 import RoundButton from "../components/RoundButton.astro";
 import "../styles/style.css";
 ---
 
 <header class="grid-view">
   <div class="header_content">
-    <li>Alt express</li>
+    <li>AskExperts</li>
     <li>
       <div class="sites">
         <p>Home</p>
@@ -15,24 +16,52 @@ import "../styles/style.css";
       </div>
     </li>
     <li>
-      <RoundButton />
+      <div class="button">
+        <RoundButton color="yellow">Login</RoundButton>
+      </div>
+    </li>
+    <li class="burgermenu">
+      <div>
+        <BurgerMenu />
+      </div>
     </li>
   </div>
 </header>
 <main>
   <slot />
 </main>
+<footer class="grid-view">
+  <ul>
+    <li>AskExperts</li>
+    <li>
+      ©2022 Consultalk. All rights reserved | Terms of Service | Privacy Policy
+    </li>
+  </ul>
+</footer>
 <style>
   header {
-    background-color: rgb(81, 78, 78);
+    background-color: var(--primary-color-3);
     padding: 1rem;
     margin: 0;
+    margin-bottom: 5rem;
+    --font-color: var(--secondary-color-2);
+
+    & *:is(.button) {
+      --font-color: var(--primary-color-3);
+    }
   }
 
   .header_content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+
+    /* & *:not(.button) {
+      --font-color: var(--secondary-color-2);
+      /* color: var(--secondary-color-2); */
+
+    /* --font-color: var(--secondary-color-2);  */
   }
   .sites {
     display: flex;
@@ -40,6 +69,46 @@ import "../styles/style.css";
     gap: 1rem;
   }
 
-  .main_layout {
+  .button {
+    scale: 0.8;
+  }
+
+  footer {
+    background-color: var(--primary-color-3);
+    --font-color: var(--secondary-color-2);
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  ul li:nth-child(2) {
+    padding-top: 0.5rem;
+    border-top: 1px solid lightgray;
+    width: 100%;
+  }
+  ul li:first-child {
+    padding-bottom: 0.5rem;
+  }
+
+  .burgermenu {
+    width: 3rem;
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .sites {
+      display: none;
+    }
+
+    .burgermenu {
+      display: block;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .burgermenu {
+      display: none;
+    }
   }
 </style>

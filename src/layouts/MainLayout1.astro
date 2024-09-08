@@ -1,0 +1,57 @@
+---
+import RoundButton from "../components/RoundButton.astro";
+import "../styles/style.css";
+// import { ViewTransitions } from "astro:transitions";
+---
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <title>Astro</title>
+  <!-- <ViewTransitions /> -->
+</head>
+<body>
+  <header class="full">
+    <div class="header_content">
+      <li>Alt express</li>
+      <li>
+        <div class="sites">
+          <p>Home</p>
+          <p>Case Study</p>
+          <p>Team</p>
+          <p>About</p>
+        </div>
+      </li>
+      <li>
+        <RoundButton />
+      </li>
+    </div>
+  </header>
+  <main>
+    <slot />
+  </main>
+</body>
+
+<style>
+  header {
+    background-color: rgb(81, 78, 78);
+    padding: 1rem;
+    margin: 0;
+  }
+
+  .header_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .sites {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .main_layout {
+  }
+</style>

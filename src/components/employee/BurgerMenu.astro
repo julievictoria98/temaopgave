@@ -1,0 +1,73 @@
+---
+
+---
+
+<div class="burgermenu">
+  <div class="menu-btn">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+</div>
+<nav class="globalmenu">
+  <ul class="navigation">
+    <li>
+      <ul class="navi">
+        <li><a href="/index">Home</a></li>
+        <li><a>Case Study</a></li>
+        <li><a href="/team">Team</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  .burgermenu {
+    display: inline-flex;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .menu-btn {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    gap: 0.4rem;
+  }
+
+  .globalmenu {
+    position: absolute;
+    color: var(--primary-color-3);
+    background-color: var(--primary-color-3);
+    width: 100%;
+    right: 0rem;
+    top: 13%;
+  }
+
+  .line {
+    width: 32px;
+    height: 2px;
+    /* border-radius: 4px; */
+    background-color: var(--font-color);
+  }
+  .menu-btn.active {
+    position: fixed;
+  }
+
+  .globalmenu.active {
+    display: none;
+  }
+</style>
+<script>
+  // use this code for activating the global-menu
+  let menuBtn = document.querySelector(".menu-btn");
+  let globalMenu = document.querySelector(".globalmenu");
+
+  menuBtn.addEventListener("click", function () {
+    menuBtn.classList.toggle("active");
+    globalMenu.classList.toggle("active");
+  });
+</script>
