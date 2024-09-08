@@ -34,17 +34,16 @@ import { Icon } from "astro-icon/components";
   <div>
     <div>
       <h1 transition:name=`name-${slug}`>{name}</h1>
-      <div class="icons">
-        <Icon name="facebook" />
+      <div class="icons" transition:animate="slide">
+        <Icon name="facebook" transition:name=`icon1-${slug}` />
         <Icon name="twitter" />
         <Icon name="instagram" />
       </div>
     </div>
-    <p>
+    <p transition:name=`p-${slug}`>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas odio
-      ipsa sequi rerum numquam! Praesentium autem repudiandae corrupti culpa
-      eum, corporis obcaecati saepe, nemo quod, aperiam explicabo porro eaque
-      beatae!
+      ipsa sequi rerum hev! Praesentiumtn autem repudiandae corrupti culpa eum,
+      corporis obcaecati saepe, nemo quod, aperiam explicabo porro eaque beatae!
     </p>
     <h2>Past experinces</h2>
     <p>
@@ -85,7 +84,7 @@ import { Icon } from "astro-icon/components";
         & > :first-child {
           display: flex;
           flex-direction: row;
-          gap: 15rem;
+          justify-content: space-between;
 
           & > * {
             display: flex;
@@ -109,9 +108,10 @@ import { Icon } from "astro-icon/components";
       article {
         display: flex;
         flex-direction: column;
-        gap: 5.563rem;
+        gap: 2rem;
         margin-top: 5rem;
         padding: 2rem;
+        text-align: center;
 
         & p:first-of-type {
           padding-bottom: 4rem;
@@ -127,7 +127,7 @@ import { Icon } from "astro-icon/components";
           & > :first-child {
             display: flex;
             flex-direction: column;
-            gap: 5rem;
+            gap: 2rem;
 
             & > * {
               display: flex;
@@ -138,6 +138,9 @@ import { Icon } from "astro-icon/components";
             }
           }
         }
+      }
+      .icons {
+        width: 8rem;
       }
     }
   }

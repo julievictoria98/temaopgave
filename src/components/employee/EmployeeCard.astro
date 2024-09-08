@@ -9,7 +9,7 @@ const { name, img, description, slug } = employee;
     <img src={img} alt={name} transition:name=`img-${slug}` />
     <div class="content">
       <h1 transition:name=`name-${slug}`>{name}</h1>
-      <p>{description}</p>
+      <p transition:name=`p-${slug}`>{description}</p>
       <div class="icons">
         <div>
           <Icon name="facebook" />
