@@ -1,4 +1,5 @@
 ---
+import MainLayout from "../../layouts/MainLayout.astro";
 import { ViewTransitions } from "astro:transitions";
 import Image from "../../components/basics/Image.astro";
 import "../../styles/style.css";
@@ -20,6 +21,52 @@ import { Icon } from "astro-icon/components";
 import Newsletter from "../../components/basics/Newsletter.astro";
 ---
 
+<body>
+  <MainLayout>
+    <article class="grid-view">
+      <div class="content">
+        <div class="img">
+          <Image
+            URL={img}
+            classname="image_style_1"
+            transition:name=`img-${slug}`
+          />
+        </div>
+        <!-- <img src={img} alt="" transition:name=`img-${slug}` /> -->
+        <div>
+          <div>
+            <h1 transition:name=`name-${slug}`>{name}</h1>
+            <div class="icons" transition:animate="slide">
+              <Icon name="facebook" transition:name=`icon1-${slug}` />
+              <Icon name="twitter" />
+              <Icon name="instagram" />
+            </div>
+          </div>
+          <p transition:name=`p-${slug}`>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+            odio ipsa sequi rerum hev! Praesentiumtn autem repudiandae corrupti
+            culpa eum, corporis obcaecati saepe, nemo quod, aperiam explicabo
+            porro eaque beatae!
+          </p>
+          <h2>Past experinces</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse,
+            molestiae excepturi provident quo repellat unde voluptatum quod
+            reprehenderit maiores magni sit. Nisi veniam atque optio alias natus
+            ex eum necessitatibus.
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates
+            dolorem possimus eum officiis vel, mollitia placeat veritatis
+            deleniti. Maxime quis ipsum nam aperiam vel repellat dolorum
+            deserunt est unde consectetur!
+          </p>
+        </div>
+      </div>
+      <Newsletter />
+    </article>
+  </MainLayout>
+</body>
 <head>
   <meta charset="utf-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -28,49 +75,6 @@ import Newsletter from "../../components/basics/Newsletter.astro";
   <title>Astro</title>
   <ViewTransitions />
 </head>
-
-<article class="grid-view">
-  <div class="content">
-    <div class="img">
-      <Image
-        URL={img}
-        classname="image_style_1"
-        transition:name=`img-${slug}`
-      />
-    </div>
-    <!-- <img src={img} alt="" transition:name=`img-${slug}` /> -->
-    <div>
-      <div>
-        <h1 transition:name=`name-${slug}`>{name}</h1>
-        <div class="icons" transition:animate="slide">
-          <Icon name="facebook" transition:name=`icon1-${slug}` />
-          <Icon name="twitter" />
-          <Icon name="instagram" />
-        </div>
-      </div>
-      <p transition:name=`p-${slug}`>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas odio
-        ipsa sequi rerum hev! Praesentiumtn autem repudiandae corrupti culpa
-        eum, corporis obcaecati saepe, nemo quod, aperiam explicabo porro eaque
-        beatae!
-      </p>
-      <h2>Past experinces</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse,
-        molestiae excepturi provident quo repellat unde voluptatum quod
-        reprehenderit maiores magni sit. Nisi veniam atque optio alias natus ex
-        eum necessitatibus.
-      </p>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates
-        dolorem possimus eum officiis vel, mollitia placeat veritatis deleniti.
-        Maxime quis ipsum nam aperiam vel repellat dolorum deserunt est unde
-        consectetur!
-      </p>
-    </div>
-  </div>
-  <Newsletter />
-</article>
 
 <style>
   @layer components {
