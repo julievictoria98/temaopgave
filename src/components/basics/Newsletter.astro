@@ -1,0 +1,146 @@
+---
+import RoundButton from "../RoundButton.astro";
+---
+
+<!-- 
+<article class="grid-view">
+  <div class="background_color">
+    <div class="flex">
+      <div>
+        <h1>Subscribe to our newsletter</h1>
+        <p>Build stronger Customer Relationships with Consultalk</p>
+      </div>
+      <div class="flex_input_button">
+        <form>
+          <input type="email" placeholder="Enter your email" />
+        </form>
+        <div class="button">
+          <RoundButton color="yellow">Subscribe</RoundButton>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img src="/src/assets/images/daisy.jpg" alt="Daisy" />
+    </div>
+  </div>
+</article> -->
+<article class="grid-view">
+  <div class="background_color">
+    <div class="flex">
+      <div>
+        <h1>Subribe to our newsletter</h1>
+        <p>Build stronger Customer Relationships with Consultalk</p>
+      </div>
+      <div class="flex_input_button">
+        <form>
+          <input type="email" placeholder="Enter your email" />
+        </form>
+        <div class="button">
+          <RoundButton color="yellow">Subscribe</RoundButton>
+        </div>
+      </div>
+    </div>
+    <img class="green" src="/src/assets/images/green.svg" alt="" />
+    <img class="pattern" src="/src/images/pattern.svg" alt="" />
+  </div>
+</article>
+
+<style>
+  article {
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+
+    & * {
+      --font-color: var(--secondary-color-2);
+    }
+
+    .button {
+      --font-color: var(--primary-color-3);
+    }
+  }
+
+  .background_color {
+    background-color: var(--primary-color-3);
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .green {
+    position: absolute;
+    width: 15rem;
+    height: 15rem;
+    left: 85%;
+    top: 65%;
+    z-index: 1;
+    transform: rotate(45deg);
+  }
+
+  .pattern {
+    position: absolute;
+    width: 15rem;
+    height: 15rem;
+    left: 85%;
+    bottom: 50%;
+    z-index: 0;
+    transform: rotate(45deg);
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0.5rem;
+
+    border-radius: 15px;
+  }
+
+  input {
+    border-radius: 25px;
+    background-color: var(--secondary-color-1);
+    padding: 0.5rem 1.5rem;
+  }
+
+  .flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: clamp(0rem, 5vw, 5rem);
+    /* position: relative;
+    overflow: hidden; */
+  }
+
+  .flex_input_button {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    z-index: 2;
+  }
+
+  .button {
+    padding: 0rem;
+  }
+
+  @media (max-width: 900px) {
+    .flex_input_button {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .flex {
+      align-items: flex-end;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .flex {
+      flex-direction: column;
+      gap: 0rem;
+      align-items: flex-start;
+    }
+    .background_color {
+      padding: 0rem;
+    }
+  }
+</style>
