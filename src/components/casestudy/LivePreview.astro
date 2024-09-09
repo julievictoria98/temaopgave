@@ -1,0 +1,60 @@
+---
+import RoundButton from "../RoundButton.astro";
+---
+
+<article>
+  <img src="/src/assets/images/previewImg.png" alt="" />
+  <div class="flex">
+    <div class="flex_column">
+      <h3>Case Name</h3>
+      <p>Taxes & Efficiency</p>
+    </div>
+    <div class="flex_column">
+      <h3>Category</h3>
+      <p>Business</p>
+    </div>
+    <div class="flex_column">
+      <h3>Date</h3>
+      <p>27th September 2022</p>
+    </div>
+    <RoundButton color="yellow">Live Preview</RoundButton>
+  </div>
+</article>
+
+<style>
+  @layer components {
+    article {
+      --font-color: var(--secondary-color-2);
+    }
+    img {
+      border-radius: 25px;
+      z-index: 2;
+    }
+
+    .flex {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      background-color: var(--primary-color-3);
+      border-radius: 15px;
+      padding: 2rem 1.5rem;
+      margin-inline: 5rem;
+      margin-top: -10px;
+      gap: 1rem;
+      z-index: 1;
+    }
+
+    .flex_column {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    @media (max-width: 800px) {
+      .flex {
+        margin-inline: 1.5rem;
+      }
+    }
+  }
+</style>
