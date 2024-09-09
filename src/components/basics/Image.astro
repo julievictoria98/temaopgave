@@ -2,7 +2,7 @@
 const { classname, URL } = Astro.props;
 ---
 
-<article class="grid-view">
+<article>
   <figure class={classname}>
     <img src={URL} alt="Nature" width="200" height="200" />
   </figure>
@@ -14,7 +14,7 @@ const { classname, URL } = Astro.props;
     position: relative;
     & > * {
       border-radius: 15px;
-      max-width: 25rem;
+      width: 25rem;
     }
 
     /* &::before{
