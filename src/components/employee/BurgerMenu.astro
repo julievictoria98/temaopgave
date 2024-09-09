@@ -9,22 +9,23 @@
     <div class="line"></div>
   </div>
 </div>
-<nav class="globalmenu">
+<div class="globalmenu">
   <ul class="navigation">
     <li>
       <ul class="navi">
-        <li><a href="/index">Home</a></li>
+        <li><a href="/about">Home</a></li>
         <li><a>Case Study</a></li>
         <li><a href="/team">Team</a></li>
-        <li><a href="#">About</a></li>
+        <li><>About</></li>
       </ul>
     </li>
   </ul>
-</nav>
+</div>
 
 <style>
   .burgermenu {
     display: inline-flex;
+    cursor: pointer;
   }
 
   a {
@@ -45,6 +46,7 @@
     width: 100%;
     right: 0rem;
     top: 13%;
+    display: none;
   }
 
   .line {
@@ -58,11 +60,11 @@
   }
 
   .globalmenu.active {
-    display: none;
+    display: block;
+    z-index: 2;
   }
 </style>
 <script>
-  // use this code for activating the global-menu
   let menuBtn = document.querySelector(".menu-btn");
   let globalMenu = document.querySelector(".globalmenu");
 
