@@ -1,0 +1,58 @@
+---
+import Label from "../basics/Label.astro";
+import EmployeeCard from "../employee/EmployeeCard.astro";
+let EmployeeData = await fetch(
+  "https://raw.githubusercontent.com/julievictoria98/frontend-design/main/resources/json/employees.json?limit=3"
+).then((res) => res.json());
+EmployeeData = EmployeeData.slice(0, 3);
+---
+
+<article class="grid-view">
+  <div class="text_content">
+    <div>
+      <Label>Our team</Label>
+    </div>
+    <h1>We champion the bold to achieve the extraordinary</h1>
+    <p>
+      Ippsum is the result of synergy between our teams and our customers. Our
+      company culture is focused on excellent productivity, customer
+      satisfaction, respect for team.
+    </p>
+  </div>
+  <div class="main_flex">
+    {
+      EmployeeData.map((employee) => {
+        return <EmployeeCard employee={employee} />;
+      })
+    }
+  </div>
+</article>
+
+<style>
+  article {
+    margin-top: 5rem;
+  }
+  .text_content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 85ch;
+  }
+
+  .main_flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    gap: 2rem;
+    row-gap: 5rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 750px) {
+    .main_flex {
+      justify-content: center;
+    }
+  }
+</style>

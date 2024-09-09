@@ -3,19 +3,22 @@ import  RoundButton from './RoundButton.astro'
 import Label from './basics/Label.astro'
 import '../styles/style.css'
 import { Icon } from 'astro-icon/components'
+const { buttonColor, bgColor, fontColor } = Astro.props;
 
 const valueData = await fetch("https://raw.githubusercontent.com/julievictoria98/frontend-design/main/resources/json/corevalues.json").then((res) => res.json());
 ---
 
-<article class="grid-view">
+<article class={`grid-view ${bgColor}`}>
     <div class="core_text_flex">
         <div class="only_text_flex">
-        <div class="text">
+        <div class={`text ${fontColor}`}>
             <h1>{valueData.title}</h1>
             <Label label="yellow">GROWING WITH OUR CLITENS</Label>
             <p>{valueData.subtitle}</p>
         </div>
-        <RoundButton color="red">Get in touch</RoundButton>
+        <div>
+        <RoundButton color={buttonColor}>Get in touch</RoundButton>
+        </div>
         </div>
         <ul class="card">
             {valueData.values.map((value) => (
@@ -28,9 +31,7 @@ const valueData = await fetch("https://raw.githubusercontent.com/julievictoria98
                 <p>{value.description}</p>
                 <button>Read more</button>
                 </li>
-            ))}
-            
-            
+            ))} 
         </ul>
     </div>
 </article>
@@ -38,19 +39,40 @@ const valueData = await fetch("https://raw.githubusercontent.com/julievictoria98
 <style>
     @layer components{
     article{
-        background-color: aqua;
-          /* --bg-color: red; */
+       
           padding-top: 5rem;
-      /* & *:not(ul):not(ul *) {
-        --font-color: var(--secondary-color-2);
-} */
-      .text :not(h2) {
-  color: var(--secondary-color-2);
-}
+ 
+    }
+    .text{
+    *+*{
+        margin-top: 1rem;
+    }
+  }
+
+
+    .fontBlack :not(h2) {
+        color: var(--primary-color-3);
+    }
+    .fontBlack * + * {
+        margin-top: 1rem;
+    } 
+
+    .fontWhite :not(h2) {
+        color: var(--secondary-color-2);
+        
+    } 
+
+    .black{
+        background-color: var(--primary-color-3);
     }
 
-  .text{
-    *+*{
+
+    .gray{
+        background-color: #F5F5F5;
+    }
+
+  .fontBlack .fontWhite{
+    * + *{
         margin-top: 1rem;
     }
   }
@@ -61,9 +83,7 @@ const valueData = await fetch("https://raw.githubusercontent.com/julievictoria98
         flex-wrap: wrap;
         gap:4rem;
         align-items: flex-start;
-        padding: 0;
-
-        
+        padding: 0;  
 
     }
 
@@ -109,16 +129,5 @@ const valueData = await fetch("https://raw.githubusercontent.com/julievictoria98
 
     }
     }
-
-    /* /* h2{
-        display: inline-block;
-        background-color: var(--primary-color-1);
-        border-radius: 25px;
-        padding: 0.5rem 1rem;
-        font-size: medium;
-
-        
-    } 
-
-    } */
+    
 </style>

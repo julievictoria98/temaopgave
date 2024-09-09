@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import "../../styles/style.css";
 const { employee } = Astro.props;
 const { name, img, description, slug } = employee;
 ---
@@ -10,6 +11,7 @@ const { name, img, description, slug } = employee;
     <div class="content">
       <h1 transition:name=`name-${slug}`>{name}</h1>
       <p transition:name=`p-${slug}`>{description}</p>
+      <label></label>
       <div class="icons">
         <div>
           <Icon name="facebook" />
@@ -49,7 +51,7 @@ const { name, img, description, slug } = employee;
         border-radius: 1rem;
         background-color: var(--secondary-color-1);
         color: var(--secondary-color-1);
-        width: 20rem;
+        width: 18rem;
         /* gap: 10rem; */
         /* align-items: center;
     text-align: center; */
@@ -83,9 +85,9 @@ const { name, img, description, slug } = employee;
         gap: 1rem;
         justify-content: space-between;
       }
+
       h1 {
         font-size: 1.5rem;
-        font-weight: bold;
       }
     }
   </style>
