@@ -1,0 +1,80 @@
+---
+import Label from "./Label.astro";
+const { labelText, headerText, siteName } = Astro.props;
+---
+
+<article class={`grid-view ${siteName}`}>
+  <div class="grid">
+    <div class="textcontainer">
+      <Label label="yellow">{labelText}</Label>
+      <h1>{headerText}</h1>
+    </div>
+  </div>
+</article>
+
+<style>
+  article {
+    padding-bottom: 12rem;
+  }
+
+  .about {
+    background-image: url("/src/assets/images/aboutHero.png");
+    background-size: cover;
+  }
+
+  .team {
+    background-image: url("/src/assets/images/teamHero.png");
+    background-size: cover;
+  }
+
+  .case {
+    background-image: url("/src/assets/images/casestudyHero.png");
+    background-size: cover;
+  }
+
+  /* .grid {
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  } */
+
+  /* img {
+    grid-column: 1 /4;
+    grid-row: 1/4;
+    object-fit: cover;
+    grid-row: 1;
+    height: 25rem;
+  } */
+  .textcontainer {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 2rem;
+    background-color: rgb(237, 236, 235);
+    border-radius: 15px;
+    max-width: 35rem;
+    margin-top: 5rem;
+  }
+  h1 {
+    font-size: var(--step-3);
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    article {
+      padding-bottom: 8rem;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .textcontainer {
+      padding: 1rem;
+      max-width: 25rem;
+    }
+  }
+</style>

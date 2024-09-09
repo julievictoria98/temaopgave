@@ -1,32 +1,28 @@
 ---
-const { label } = Astro.props
+const { label } = Astro.props;
 ---
 
 <div class={label}>
-    <slot />
+  <slot />
 </div>
 
 <style>
-    div{
-        display: inline-block;
-        background-color: var(--primary-color-1);
-        border-radius: 25px;
-        /* padding: 0.2rem; */
-        font-size: small;
-        padding: 0.2rem 0.5rem;
+  div {
+    display: inline-block;
+    background-color: var(--primary-color-1);
+    border-radius: 25px;
+    /* padding: 0.2rem; */
+    font-size: x-small;
+    padding: 0.1rem 0.8rem;
+  }
 
+  .yellow {
+    background-color: var(--primary-color-1);
+    color: var(--primary-color-3);
+  }
 
-
-    }
-
-    .yellow{
-        background-color: var(--primary-color-1);
-        color: var(--primary-color-3);
-    }
-
-    .white{
-        background-color: var(--secondary-color-3);
-        color: var(--primary-color-3);
-    }
-
+  .white {
+    background-color: var(--secondary-color-3);
+    color: var(--primary-color-3);
+  }
 </style>

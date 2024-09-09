@@ -2,6 +2,7 @@
 import { ViewTransitions } from "astro:transitions";
 import EmployeeCards from "../components/employee/EmployeeCards.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import HeroSection from "../components/basics/HeroSection.astro";
 ---
 
 <html lang="en">
@@ -15,6 +16,11 @@ import MainLayout from "../layouts/MainLayout.astro";
   </head>
   <body>
     <MainLayout>
+      <HeroSection
+        labelText="TEAM"
+        headerText="The Consultors"
+        siteName="team"
+      />
       <EmployeeCards />
     </MainLayout>
   </body>
