@@ -1,0 +1,206 @@
+---
+import Label from "../basics/Label.astro";
+---
+
+<article class="grid-view">
+  <section class="flex_row">
+    <div class="content">
+      <Label label="green">OUR VISION</Label>
+      <h1>Turn your ideas into reality</h1>
+      <p>
+        Capitalize on low hanging fruit to identify a ballpark value added
+        activity beta test. Override the digital divide with additional from
+        DevOps.
+      </p>
+      <div class="list_item" '>
+        <img
+          class="icon"
+          src="/src/assets/icons/checkmark.svg"
+          alt=" Green checkmark icon"
+        />
+        <p>
+          Bring to the table win-win survival strategies to ensure proactive
+          domination. At the end of the day.
+        </p>
+      </div>
+      <div class="list_item">
+        <img
+          class="icon"
+          src="/src/assets/icons/checkmark.svg"
+          alt="Green cheackmark icon"
+        />
+        <p>
+          Capitalize on low hanging fruit to identify a ballpark value added
+          activity to beta test override the digital.
+        </p>
+      </div>
+    </div>
+    <div class="img_container">
+      <img
+        class="main_img"
+        src="/src/assets/images/our-vision-img.png"
+        alt=""
+      />
+    </div>
+  </section>
+  <section class="counter">
+    <div>
+      <h2>1128+</h2>
+      <p>Successful Work</p>
+    </div>
+    <div>
+      <h2>908+</h2>
+      <p>Team member</p>
+    </div>
+    <div>
+      <h2>258+</h2>
+      <p>Happy Customers</p>
+    </div>
+    <div>
+      <h2>564+</h2>
+      <p>Creative Idea</p>
+    </div>
+  </section>
+</article>
+
+<style>
+  @layer components {
+    article {
+      margin-bottom: 3rem;
+      container-type: inline-size;
+    }
+
+    .main_img {
+      width: 30rem;
+    }
+
+    .list_item {
+      display: flex;
+
+      gap: 1rem;
+    }
+    .content {
+      & > * {
+        margin-block-start: 1.813rem;
+      }
+    }
+    .flex_row {
+      display: flex;
+      align-items: center;
+      padding-inline: 2rem;
+      gap: 7rem;
+    }
+
+    .icon {
+      width: 1.3rem;
+    }
+
+    .counter {
+      display: flex;
+      flex-direction: row;
+      padding-inline: 4rem;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin-top: 4.5rem;
+
+      & h2 {
+        font-size: var(--step-3);
+        font-weight: 500;
+      }
+    }
+
+    p {
+      max-width: 75ch;
+    }
+
+    .img_container {
+      position: relative; /* ensure relative positioning for absolute positioning context */
+    }
+
+    .img_container::before {
+      content: "";
+      background-color: var(--primary-color-2);
+      border-radius: 25px;
+      font-size: 3rem;
+      position: absolute;
+      width: 10rem;
+      height: 10rem;
+      left: 73%;
+      top: -5%;
+      z-index: -1;
+    }
+
+    .img_container::after {
+      content: "";
+      background-image: url(/src/images/pattern.svg);
+      border-radius: 25px;
+      font-size: 3rem;
+      position: absolute;
+      width: 15rem;
+      height: 15rem;
+      left: 65%;
+      top: -15%;
+      z-index: -2;
+    }
+
+    @container (width < 1100px) {
+      .flex_row {
+        gap: 2rem;
+      }
+      & .main_img {
+        width: 20rem;
+      }
+
+      .img_container::after {
+        left: 55%;
+        width: 12rem;
+        height: 12rem;
+      }
+      .img_container::before {
+        left: 56%;
+      }
+    }
+    @container (width < 750px) {
+      .flex_row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5rem;
+
+        & .main_img {
+          width: 30rem;
+        }
+      }
+      .img_container::after {
+        left: 70%;
+      }
+      .img_container::before {
+        left: 70%;
+      }
+    }
+    @container (width < 600px) {
+      .flex_row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5rem;
+
+        & .main_img {
+          width: 20rem;
+        }
+      }
+      .counter {
+        padding-inline: 0;
+      }
+      .img_container::after {
+        left: 55%;
+        width: 12rem;
+        height: 12rem;
+      }
+      .img_container::before {
+        left: 56%;
+      }
+    }
+  }
+</style>

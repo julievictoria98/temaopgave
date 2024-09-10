@@ -66,67 +66,24 @@ import Newsletter from "../../components/basics/Newsletter.astro";
       <Newsletter />
     </article>
   </MainLayout>
-</body>
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width" />
-  <meta name="generator" content={Astro.generator} />
-  <title>Astro</title>
-  <ViewTransitions />
-</head>
 
-<style>
-  @layer components {
-    .content {
-      display: flex;
-      flex-direction: row;
-      gap: 7rem;
-      margin-top: 5rem;
-      padding: 2rem;
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+    <ViewTransitions />
+  </head>
 
-      & p:first-of-type {
-        padding-bottom: 4rem;
-        border-bottom: 2px solid rgb(208, 206, 206);
-      }
-
-      & > :nth-child(2) {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        padding-left: 0rem;
-
-        & > :first-child {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-
-          & > * {
-            display: flex;
-            flex-direction: row;
-            gap: 2rem;
-          }
-        }
-      }
-    }
-
-    h1,
-    h2 {
-      font-size: var(--step-4);
-    }
-
-    .icons {
-      width: 10rem;
-    }
-
-    @media (max-width: 768px) {
+  <style>
+    @layer components {
       .content {
         display: flex;
-        flex-direction: column;
-        gap: 2rem;
+        flex-direction: row;
+        gap: 7rem;
         margin-top: 5rem;
         padding: 2rem;
-        text-align: center;
 
         & p:first-of-type {
           padding-bottom: 4rem;
@@ -141,22 +98,71 @@ import Newsletter from "../../components/basics/Newsletter.astro";
 
           & > :first-child {
             display: flex;
-            flex-direction: column;
-            gap: 2rem;
+            flex-direction: row;
+            justify-content: space-between;
 
             & > * {
               display: flex;
               flex-direction: row;
               gap: 2rem;
-              max-width: 100rem;
-              align-self: center;
             }
           }
         }
       }
+
+      h1,
+      h2 {
+        font-size: var(--step-4);
+      }
+
       .icons {
-        width: 8rem;
+        width: 10rem;
+      }
+
+      @media (max-width: 768px) {
+        .content {
+          display: flex;
+          flex-direction: column;
+          margin-top: 5rem;
+          padding: 2rem;
+          text-align: center;
+
+          & p:first-of-type {
+            padding-bottom: 4rem;
+            border-bottom: 2px solid rgb(208, 206, 206);
+          }
+
+          & > :nth-child(2) {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding-left: 0rem;
+
+            & > :first-child {
+              display: flex;
+              flex-direction: column;
+              gap: 2rem;
+
+              & > * {
+                display: flex;
+                flex-direction: row;
+                gap: 2rem;
+                max-width: 100rem;
+                align-self: center;
+              }
+            }
+          }
+        }
+        .icons {
+          width: 8rem;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .content {
+          gap: 3rem;
+        }
       }
     }
-  }
-</style>
+  </style>
+</body>

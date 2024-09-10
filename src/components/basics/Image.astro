@@ -3,18 +3,23 @@ const { classname, URL } = Astro.props;
 ---
 
 <article>
-  <figure class={classname}>
-    <img src={URL} alt="Nature" width="200" height="200" />
+  <figure>
+    <div class={classname}>
+      <img src={URL} alt="Nature" width="200" height="200" />
+    </div>
   </figure>
 </article>
 <style>
   figure {
     margin-inline: auto;
     display: block;
-    position: relative;
     & > * {
       border-radius: 15px;
       width: 25rem;
+    }
+
+    div {
+      position: relative;
     }
 
     /* &::before{
@@ -78,13 +83,12 @@ const { classname, URL } = Astro.props;
     content: "";
     background-image: url(../../images/pattern.svg);
     border-radius: 2rem;
-
     font-size: 3rem;
     position: absolute;
     width: 6em;
     height: 17rem;
     top: -15%;
-    left: 50%;
+    left: 40%;
     z-index: -2;
   }
 
@@ -98,7 +102,7 @@ const { classname, URL } = Astro.props;
     width: 20.487rem;
     height: 20.487rem;
     top: 35%;
-    left: -15%;
+    left: 10%;
     z-index: -2;
   }
   .image_style_2::after {
@@ -141,18 +145,18 @@ const { classname, URL } = Astro.props;
   }
 
   @media (max-width: 1000px) {
-    .image_style_1::before {
+    /* .image_style_1::before {
       width: 7rem;
       height: 8rem;
       left: 75%;
-    }
+    } */
 
-    .image_style_1::after {
+    /* .image_style_1::after {
       width: 15rem;
       height: 15rem;
       top: -15%;
       left: 45%;
-    }
+    } */
 
     .image_style_2::before {
       width: 20.487rem;

@@ -1,10 +1,9 @@
 ---
 import LivePreview from "./LivePreview.astro";
-
 ---
 
 <article class="grid-view">
-    <LivePreview />
+  <LivePreview />
   <div>
     <h1>Project Overview</h1>
     <p>
@@ -49,12 +48,24 @@ import LivePreview from "./LivePreview.astro";
         installed base portals after maintainable products completely pursue
         scalable customer service.
       </p>
-      <img src="/src/assets/images/casestudyImg.png" alt="">
+      <img src="/src/assets/images/casestudyImg.png" alt="" />
     </div>
     <div>
-        <h2>Project result</h2>
-        <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
-        <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+      <h2>Project result</h2>
+      <p>
+        Leverage agile frameworks to provide a robust synopsis for high level
+        overviews. Iterative approaches to corporate strategy foster
+        collaborative thinking to further the overall value proposition.
+        Organically grow the holistic world view of disruptive innovation via
+        workplace diversity and empowerment.
+      </p>
+      <p>
+        Bring to the table win-win survival strategies to ensure proactive
+        domination. At the end of the day, going forward, a new normal that has
+        evolved from generation X is on the runway heading towards a streamlined
+        cloud solution. User generated content in real-time will have multiple
+        touchpoints for offshoring.
+      </p>
     </div>
   </div>
 </article>
@@ -62,42 +73,36 @@ import LivePreview from "./LivePreview.astro";
 <style>
   @layer components {
     article {
-    & > div:first-of-type {
-          padding-inline: calc(2rem + 15vw);
-
-
-    }
+      & > div:first-of-type {
+        padding-inline: calc(2rem + 15vw);
+      }
     }
 
-    div{
-        & > * + * {
-        margin-block-start: 1.813rem; // Adds margin between all direct children
-        }
+    div {
+      & > * + * {
+        margin-block-start: 1.813rem;
+      }
     }
     li {
-    list-style: circle;
+      list-style: circle;
     }
 
     ul {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
 
-    img{
-        padding-inline: 2rem;
+    img {
+      padding-inline: 2rem;
     }
 
     @media (max-width: 800px) {
-        article {
-            & > div:first-of-type {
-                padding-inline: calc(0.5rem + 5vw);
-
-
-            }
+      article {
+        & > div:first-of-type {
+          padding-inline: calc(0.5rem + 5vw);
         }
-
+      }
     }
-}
-  
+  }
 </style>
