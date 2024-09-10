@@ -36,6 +36,7 @@
   p {
     
     font-size: var(--step-0);
+    line-height: 1.6;
   }
 
   .grid-view {

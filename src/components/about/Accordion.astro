@@ -1,0 +1,164 @@
+---
+import Label from "../basics/Label.astro";
+import "../../styles/style.css";
+---
+
+<article class="grid-view">
+  <section>
+    <label>FAQ</label>
+    <h1>Customer Questions</h1>
+    <div class="faq">
+      <div class="question">
+        <h2>What will happen when I've sent my application?</h2>
+        <div class="img">
+          <img src="/src/assets/icons/plus.svg" alt="" />
+        </div>
+      </div>
+      <div class="answer">
+        <p>
+          Ippsum is the result of synergy between our teams and our customers.
+          Our company culture is focused on excellent productivity, customer
+          satisfaction, respect for team and individual achievements.
+        </p>
+      </div>
+    </div>
+    <div class="faq">
+      <div class="question">
+        <h2>What should I include in my personal statement?</h2>
+        <div class="img">
+          <img src="/src/assets/icons/plus.svg" alt="" />
+        </div>
+      </div>
+      <div class="answer">
+        <p>
+          Ippsum is the result of synergy between our teams and our customers.
+          Our company culture is focused on excellent productivity, customer
+          satisfaction, respect for team and individual achievements.
+        </p>
+      </div>
+    </div>
+    <div class="faq">
+      <div class="question">
+        <h2>Can I get a free trial before I purchase?</h2>
+        <div class="img">
+          <img src="/src/assets/icons/plus.svg" alt="" />
+        </div>
+      </div>
+      <div class="answer">
+        <p>
+          Ippsum is the result of synergy between our teams and our customers.
+          Our company culture is focused on excellent productivity, customer
+          satisfaction, respect for team and individual achievements.
+        </p>
+      </div>
+    </div>
+    <div class="faq">
+      <div class="question">
+        <h2>What will happen when I've sent my application?</h2>
+        <div class="img">
+          <img src="/src/assets/icons/plus.svg" alt="" />
+        </div>
+      </div>
+      <div class="answer">
+        <p>
+          Ippsum is the result of synergy between our teams and our customers.
+          Our company culture is focused on excellent productivity, customer
+          satisfaction, respect for team and individual achievements.
+        </p>
+      </div>
+    </div>
+    <div class="faq">
+      <div class="question">
+        <h2>Can I get a free trial before I purchase?</h2>
+        <div class="img">
+          <img src="/src/assets/icons/plus.svg" alt="" />
+        </div>
+      </div>
+      <div class="answer">
+        <p>
+          Ippsum is the result of synergy between our teams and our customers.
+          Our company culture is focused on excellent productivity, customer
+          satisfaction, respect for team and individual achievements.
+        </p>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- <h2>Can I get a free trial before I purchase?</h2>
+<h2>What should I include in my personal statement?</h2> -->
+
+<style>
+  article {
+  }
+
+  section {
+    background-color: rgb(232, 229, 229);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(0rem, 10vw, 8rem);
+  }
+
+  .faq {
+    max-width: 50rem;
+    margin-top: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgb(197, 195, 195);
+    cursor: pointer;
+  }
+
+  .question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .question h2 {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .answer p {
+    padding-top: 1rem;
+  }
+
+  .answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in;
+  }
+
+  .faq.active .answer {
+    max-height: 10rem;
+  }
+  .img {
+    display: flex;
+    width: 1.1rem;
+    height: 1rem;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    article {
+      background-color: rgb(232, 229, 229);
+    }
+  }
+</style>
+
+<script>
+  const faqs = document.querySelectorAll(".faq");
+  faqs.forEach((faq) => {
+    faq.addEventListener("click", () => {
+      faq.classList.toggle("active");
+
+      const icon = faq.querySelector("img");
+      if (faq.classList.contains("active")) {
+        icon.src = "/src/assets/icons/minus.svg";
+      } else {
+        icon.src = "/src/assets/icons/plus.svg";
+      }
+    });
+  });
+</script>
