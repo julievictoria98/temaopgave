@@ -7,6 +7,10 @@ import EmployeeCards from "../components/employee/EmployeeCards.astro";
 import "../styles/style.css";
 import { ViewTransitions } from "astro:transitions";
 import Newsletter from "../components/basics/Newsletter.astro";
+import PercentageCircle from "../components/index/PercentageCircle.astro";
+import Experince from "../components/index/Experince.astro";
+import WhatToExpect from "../components/index/WhatToExpect.astro";
+import Hero from "../components/index/Hero.astro";
 
 // const employeeData = await fetch(
 //   "https://raw.githubusercontent.com/julievictoria98/frontend-design/main/resources/json/employees.json"
@@ -24,6 +28,7 @@ import Newsletter from "../components/basics/Newsletter.astro";
   </head>
   <body>
     <MainLayout>
+      <Hero />
       <!-- {
 		employeeData.map((employee) => (
 			<div>
@@ -31,9 +36,10 @@ import Newsletter from "../components/basics/Newsletter.astro";
 				<p>{employee.title}</p>
 			</div>
 		))} -->
+      <WhatToExpect />
       <Scrolling />
       <CoreValues buttonColor="yellow" bgColor="black" fontColor="fontWhite" />
-      <EmployeeCards />
+      <Experince />
       <Newsletter />
     </MainLayout>
   </body>

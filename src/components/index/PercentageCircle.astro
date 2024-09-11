@@ -1,0 +1,53 @@
+---
+const { text, number } = Astro.props;
+---
+
+<div class="parent" style={number}>
+  <div class="center-content">{text}</div>
+  <div class="child"></div>
+</div>
+
+<style>
+  .parent {
+    --offset-pos: 5px;
+    --percent: 75%;
+    border: var(--offset-pos) solid transparent;
+    background:
+      radial-gradient(
+          circle at 50% calc(var(--offset-pos) / 2),
+          #fff calc(var(--offset-pos) / 2),
+          transparent 0
+        )
+        border-box,
+      linear-gradient(var(--primary-color-1), var(--primary-color-1))
+        padding-box,
+      conic-gradient(#fff var(--percent), rgb(169, 169, 169) 0) border-box;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    width: 150px;
+    border-radius: 1e5px;
+    margin-inline: auto;
+  }
+
+  .center-content {
+    position: relative;
+    z-index: 1; /* Ensure the text stays above other elements */
+    font-size: var(--step-2);
+    font-weight: 500;
+  }
+
+  .child {
+    aspect-ratio: 1;
+    border-radius: 50%; /* Make the ball perfectly round */
+    width: 20px;
+    background: rgb(25, 25, 25);
+    position: absolute;
+    offset-path: border-box;
+    offset-distance: var(--percent);
+    offset-anchor: 50% calc(50% - var(--offset-pos) / 2);
+  }
+</style>

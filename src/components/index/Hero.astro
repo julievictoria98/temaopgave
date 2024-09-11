@@ -1,0 +1,83 @@
+---
+import RoundButton from "../RoundButton.astro";
+import "../../styles/style.css";
+---
+
+<article>
+    <div>
+        <section class="text_content">
+            <h1>Adam Buschemia Business Consultant</h1>
+            <p>
+            Get help from Alex Moore, a professional business coach with advanced
+            experience on growth and business scaling.
+            </p>
+            <div>
+            <RoundButton color="white">Book a Meeting</RoundButton>
+            </div>
+        </section>
+        <section>
+            <img src="/src/assets/images/our-vision-img.png" alt="Sarah" />
+        </section>
+  </div>
+  <section class="boxes">
+    <div>
+      <h2>Finance & Restructuring</h2>
+      <p>
+        Get help from Alex Moore, a professional business coach with advanced
+        experience on growth and business scaling.
+      </p>
+      <a href="../../pages/casestudy">
+        <RoundButton color="white">Our Services</RoundButton>
+      </a>
+    </div>
+    <div>
+      <h2>Our Approach</h2>
+      <p>
+        Get help from Alex Moore, a professional business coach with advanced
+        experience on growth and business scaling.
+      </p>
+      <a href="../../pages/about">
+        <RoundButton color="white">More About</RoundButton>
+      </a>
+    </div>
+    <div>
+      <h2>Finance & Re</h2>
+      <p>
+        Get help from Alex Moore, a professional business coach with advanced
+        experience on growth and business scaling.
+      </p>
+      <a href="../../pages/team">
+        <RoundButton color="white">Explore Our Solution</RoundButton>
+      </a>
+    </div>
+  </section>
+</article>
+
+<style>
+  @layer components {
+    article {
+      background-color: var(--primary-color-3);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      --font-color: white;
+
+      .text_content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding-inline: 5rem;
+      }
+    }
+
+    .boxes{
+        display: flex;
+        gap: 2rem;
+      & div {
+        padding: 2rem;
+        border-radius: 15px;
+        background-color: var(--primary-color-1);
+        gap: 1rem;
+      }
+    }
+  }
+</style>

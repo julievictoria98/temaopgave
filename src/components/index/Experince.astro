@@ -1,0 +1,92 @@
+---
+import Label from "../basics/Label.astro";
+import PercentageCircle from "./PercentageCircle.astro";
+---
+
+<article class="grid-view">
+  <section class="content">
+    <div>
+      <div>
+        <Label label="white">EXPERINCE</Label>
+      </div>
+      <h1>More than 25 years of experience</h1>
+      <p>3000+ our clients are insured around the World</p>
+    </div>
+    <div class="percentage">
+      <div class="percentagecircle">
+        <PercentageCircle
+          percentage="85"
+          text="85%"
+          percentage="85"
+          number="--percent: 75%"
+        />
+        <h2>Consistency</h2>
+      </div>
+      <div class="percentagecircle">
+        <PercentageCircle percentage="95" text="95%" number="--percent: 95%" />
+        <h2>Improvement</h2>
+      </div>
+      <div class="percentagecircle">
+        <PercentageCircle percentage="90" text="90%" number="--percent: 90%" />
+        <h2>Branching</h2>
+      </div>
+    </div>
+  </section>
+</article>
+
+<style>
+  article {
+    background-color: var(--primary-color-1);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  section {
+    & > *:first-child {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .percentage {
+    display: flex;
+    gap: 5rem;
+  }
+
+  .percentagecircle {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 0.5rem;
+    align-items: center;
+  }
+
+  @media (max-width: 1200px) {
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .percentage {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 700px) {
+    section {
+      & > *:first-child {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  }
+</style>
