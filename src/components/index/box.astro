@@ -1,0 +1,41 @@
+---
+import RoundButton from "../RoundButton.astro";
+import "../../styles/style.css";
+const {header, url, btnText} = Astro.props;
+---
+<div>
+    <h2>{header}</h2>
+    <p>
+    Get help from Alex Moore, a professional business coach with advanced
+    experience on growth and business scaling.
+    </p>
+    <a href={`${url}`}>
+    <RoundButton color="black">{btnText}</RoundButton>
+    </a>
+</div>
+
+<style> 
+    @layer components {
+        h2 {
+            font-weight: 600;
+            font-size: var(--step-1);
+            padding-bottom: .7rem;
+        }
+
+        p {
+            font-size: var(--step-0);
+            color: white;
+            padding-bottom: 1.5rem;
+        }
+
+        div {
+            padding: 2rem;
+            border-radius: 15px;
+            gap: 1rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            background: rgba(38, 38, 38, 0.90);
+            backdrop-filter: blur(10px);
+        }
+    }
+</style>

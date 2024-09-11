@@ -1,10 +1,11 @@
 ---
 import RoundButton from "../RoundButton.astro";
+import Box from "./Box.astro";
 import "../../styles/style.css";
 ---
 
 <article>
-    <div>
+    <div class="grid">
         <section class="text_content">
             <h1>Adam Buschemia Business Consultant</h1>
             <p>
@@ -15,69 +16,55 @@ import "../../styles/style.css";
             <RoundButton color="white">Book a Meeting</RoundButton>
             </div>
         </section>
-        <section>
+        <section class="img_container">
             <img src="/src/assets/images/our-vision-img.png" alt="Sarah" />
         </section>
   </div>
   <section class="boxes">
-    <div>
-      <h2>Finance & Restructuring</h2>
-      <p>
-        Get help from Alex Moore, a professional business coach with advanced
-        experience on growth and business scaling.
-      </p>
-      <a href="../../pages/casestudy">
-        <RoundButton color="white">Our Services</RoundButton>
-      </a>
-    </div>
-    <div>
-      <h2>Our Approach</h2>
-      <p>
-        Get help from Alex Moore, a professional business coach with advanced
-        experience on growth and business scaling.
-      </p>
-      <a href="../../pages/about">
-        <RoundButton color="white">More About</RoundButton>
-      </a>
-    </div>
-    <div>
-      <h2>Finance & Re</h2>
-      <p>
-        Get help from Alex Moore, a professional business coach with advanced
-        experience on growth and business scaling.
-      </p>
-      <a href="../../pages/team">
-        <RoundButton color="white">Explore Our Solution</RoundButton>
-      </a>
-    </div>
+    <Box header="Finance & Restructuring" url="casestudy" btnText="Our Services" />
+    <Box header="Our Approach" url="about" btnText="More About" />
+    <Box header="Consultalk Result" url="team" btnText="Explore Our Solution" />
   </section>
 </article>
 
 <style>
   @layer components {
     article {
-      background-color: var(--primary-color-3);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
       --font-color: white;
 
       .text_content {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        padding-inline: 5rem;
+        padding-left: 15rem;
+        max-width: 40rem;
+        padding-top:5rem;
       }
+    }
+
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: var(--primary-color-3);
+
     }
 
     .boxes{
         display: flex;
         gap: 2rem;
+        padding-inline:15rem;
+        margin-top: -10rem;
       & div {
         padding: 2rem;
         border-radius: 15px;
-        background-color: var(--primary-color-1);
         gap: 1rem;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.20);
+        background: rgba(38, 38, 38, 0.90);
+        backdrop-filter: blur(10px);
       }
     }
+
+    /* TODO: Hide img_container when small screen */
   }
 </style>
