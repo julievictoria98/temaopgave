@@ -16,8 +16,13 @@ const { color } = Astro.props;
     cursor: pointer;
   }
 
-  .red {
-    background-color: var(--secondary-color-2);
+  button:hover {
+    transform: scale(1.05);
+  }
+
+  .yellow:hover {
+    background-color: var(--primary-color-3);
+    color: var(--secondary-color-2);
   }
 
   .yellow {
@@ -30,8 +35,19 @@ const { color } = Astro.props;
     color: var(--secondary-color-2);
   }
 
+  .black:hover {
+    background-color: var(--secondary-color-2);
+    color: var(--primary-color-3);
+    border: 2px solid var(--primary-color-3);
+  }
+
   .white {
     background-color: var(--secondary-color-2);
     color: var(--primary-color-3);
+  }
+
+  .white:hover {
+    background-color: var(--primary-color-1);
+    color: var(--primary-color-3: );
   }
 </style>

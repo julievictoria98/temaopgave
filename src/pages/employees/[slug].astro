@@ -27,7 +27,7 @@ import Newsletter from "../../components/basics/Newsletter.astro";
       <div class="content">
         <div class="img">
           <Image
-            URL={img}
+            URL={img.slice(11)}
             classname="image_style_1"
             transition:name=`img-${slug}`
           />

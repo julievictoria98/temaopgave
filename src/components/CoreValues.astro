@@ -17,7 +17,7 @@ const valueData = await fetch("https://raw.githubusercontent.com/julievictoria98
             <p>{valueData.subtitle}</p>
         </div>
         <div>
-        <RoundButton color={buttonColor}>Get in touch</RoundButton>
+            <RoundButton color={buttonColor}>Get in touch</RoundButton> 
         </div>
         </div>
         <ul class="card">
@@ -39,8 +39,7 @@ const valueData = await fetch("https://raw.githubusercontent.com/julievictoria98
 <style>
     @layer components{
     article{
-       
-          padding-top: 5rem;
+       padding: 5rem;
  
     }
     .text{
@@ -93,9 +92,8 @@ const valueData = await fetch("https://raw.githubusercontent.com/julievictoria98
         padding: 1.2rem; 
         box-sizing: border-box;
         max-width: 15rem; */
-        align-self: flex-start
-     
-}
+        align-self: flex-start;
+    }
 
     .core_text_flex{
         display: flex;
@@ -126,8 +124,26 @@ const valueData = await fetch("https://raw.githubusercontent.com/julievictoria98
         & p{
             max-width: 35rem;
         }
+    }
 
+    @media (max-width: 800px) {
+        .only_text_flex{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+     
+    }
+
+    @media (max-width: 640px) {
+
+           ul{
+            justify-content: center;
+       
+    }
+        
     }
     }
+
+
     
 </style>

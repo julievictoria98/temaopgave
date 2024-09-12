@@ -13,10 +13,10 @@
   <ul class="navigation">
     <li>
       <ul class="navi">
-        <li><a href="/about">Home</a></li>
-        <li><a>Case Study</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/casestudy">Case Study</a></li>
         <li><a href="/team">Team</a></li>
-        <li><>About</></li>
+        <li><a href="/about">About</a></li>
       </ul>
     </li>
   </ul>
@@ -35,7 +35,6 @@
   .menu-btn {
     display: flex;
     flex-direction: column;
-    position: fixed;
     gap: 0.4rem;
   }
 
@@ -52,11 +51,7 @@
   .line {
     width: 32px;
     height: 2px;
-    /* border-radius: 4px; */
     background-color: var(--font-color);
-  }
-  .menu-btn.active {
-    position: fixed;
   }
 
   .globalmenu.active {

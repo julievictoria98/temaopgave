@@ -1,30 +1,26 @@
 ---
-import BurgerMenu from "../components/employee/BurgerMenu.astro";
+import BurgerMenu from "../components/basics/BurgerMenu.astro";
 import Popup from "../components/index/Popup.astro";
 import "../styles/style.css";
 ---
 
 <header class="grid-view">
   <div class="header_content">
-    <li>AskExperts</li>
-    <li>
-      <div class="sites">
-        <li><a href="">Home</a></li>
-        <li><a href="case-study.html">Case Study</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="about.html">About</a></li>
-      </div>
-    </li>
-    <li>
-      <div class="button">
-        <Popup />
-      </div>
-    </li>
-    <li class="burgermenu">
+    <div>AskExperts</div>
+    <div class="sites">
+      <a href="/">Home</a>
+      <a href="casestudy">Case Study</a>
+      <a href="team">Team</a>
+      <a href="about">About</a>
+    </div>
+    <div class="button">
+      <Popup />
+    </div>
+    <div class="burgermenu">
       <div class="burgermenu_div">
         <BurgerMenu />
       </div>
-    </li>
+    </div>
   </div>
 </header>
 <main>
@@ -61,6 +57,10 @@ import "../styles/style.css";
       /* color: var(--secondary-color-2); */
 
     /* --font-color: var(--secondary-color-2);  */
+  }
+
+  a {
+    text-decoration: none;
   }
   .sites {
     display: flex;
