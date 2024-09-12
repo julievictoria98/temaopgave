@@ -1,5 +1,6 @@
 ---
 import Label from "../basics/Label.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <article class="grid-view">
@@ -20,23 +21,19 @@ import Label from "../basics/Label.astro";
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
         commodo consequat.
       </p>
-      <div class="list_item" '>
-        <img
-          class="icon"
-          src="/assets/icons/checkmark.svg"
-          alt=" Green checkmark icon"
-        />
+      <div class="list_item">
+       <div class="icon">
+          <Icon name="checkmark" />
+        </div>
         <p>
           Bring to the table win-win survival strategies to ensure proactive
           domination. At the end of the day.
         </p>
       </div>
       <div class="list_item">
-        <img
-          class="icon"
-          src="/assets/icons/checkmark.svg"
-          alt="Green cheackmark icon"
-        />
+      <div class="icon">
+          <Icon name="checkmark" />
+        </div>
         <p>
           Capitalize on low hanging fruit to identify a ballpark value added
           activity to beta test override the digital.
@@ -76,7 +73,7 @@ import Label from "../basics/Label.astro";
     }
 
     .icon {
-      width: 1.3rem;
+      width: 2.5rem;
     }
 
     .counter {
