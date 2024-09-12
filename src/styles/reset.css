@@ -1,4 +1,4 @@
-*,
+/* *,
 ::before,
 ::after {
   box-sizing: border-box;
@@ -93,10 +93,10 @@ audio,
 iframe,
 img,
 picture,
-/* video {
+video {
   inline-size: 100%;
   display: block;
-} */
+}
 
 img,
 svg,
@@ -193,4 +193,4 @@ textarea:not([rows]) {
     animation-iteration-count: 1 !important;
     animation: 0.01s !important;
   }
-}
+} */
