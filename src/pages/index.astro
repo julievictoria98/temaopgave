@@ -12,10 +12,6 @@ import Experince from "../components/index/Experince.astro";
 import WhatToExpect from "../components/index/WhatToExpect.astro";
 import Hero from "../components/index/Hero.astro";
 import ContactUs from "../components/index/ContactUs.astro";
-
-// const employeeData = await fetch(
-//   "https://raw.githubusercontent.com/julievictoria98/frontend-design/main/resources/json/employees.json"
-// ).then((res) => res.json());
 ---
 
 <html lang="en">
@@ -30,13 +26,6 @@ import ContactUs from "../components/index/ContactUs.astro";
   <body>
     <MainLayout>
       <Hero />
-      <!-- {
-		employeeData.map((employee) => (
-			<div>
-				<h2>{employee.name}</h2>
-				<p>{employee.title}</p>
-			</div>
-		))} -->
       <WhatToExpect />
       <Scrolling />
       <Experince />

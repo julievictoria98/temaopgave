@@ -54,26 +54,11 @@
       grid-column: content;
     } 
 
-    /* .content {
-      grid-column: content;
-    }
-
-    .full {
-      grid-column: full;
-    }
-
-   
-    & * {
-      color: var(--font-color);
-    } */
 
     & > * + * {
       margin-block-start: 1.5rem;
     }
 
-     /* p {
-      color: var(--primary-color-3);
-    }  */
 
     .bold {
       font-weight: 500;
