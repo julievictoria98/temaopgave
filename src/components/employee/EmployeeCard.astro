@@ -6,7 +6,7 @@ const { name, img, description, slug } = employee;
 ---
 
 <div class="employee_card">
-  <a data-view-transition href={`employees/${slug}`}>
+  <a data-view-transition href={`/employees/${slug}`}>
     <img src={img.slice(11)} alt={name} transition:name=`img-${slug}` />
     <div class="content">
       <h1 transition:name=`name-${slug}`>{name}</h1>
