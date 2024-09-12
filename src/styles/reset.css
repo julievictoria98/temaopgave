@@ -93,10 +93,10 @@ audio,
 iframe,
 img,
 picture,
-video {
+/* video {
   inline-size: 100%;
   display: block;
-}
+} */
 
 img,
 svg,
