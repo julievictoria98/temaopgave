@@ -1,7 +1,6 @@
 ---
 import BurgerMenu from "../components/employee/BurgerMenu.astro";
 import Popup from "../components/index/Popup.astro";
-import RoundButton from "../components/RoundButton.astro";
 import "../styles/style.css";
 ---
 
@@ -10,16 +9,15 @@ import "../styles/style.css";
     <li>AskExperts</li>
     <li>
       <div class="sites">
-        <p>Home</p>
-        <p>Case Study</p>
-        <p>Team</p>
-        <p>About</p>
+        <li><a href="">Home</a></li>
+        <li><a href="case-study.html">Case Study</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="about.html">About</a></li>
       </div>
     </li>
     <li>
       <div class="button">
         <Popup />
-        <!-- <RoundButton color="yellow">Login</RoundButton> -->
       </div>
     </li>
     <li class="burgermenu">
