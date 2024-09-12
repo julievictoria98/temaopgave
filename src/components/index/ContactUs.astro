@@ -1,0 +1,59 @@
+---
+import Label from "../basics/Label.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<article>
+  <section>
+    <Label color="yelloew">PROCESS</Label>
+    <h1>Contect Us. It's Easy</h1>
+    <p>
+      Leverage agile frameworks to provide a robust synopsis for high level
+      overviews. Iterative approaches to corporate strategy foster
+      collaborative.
+    </p>
+    <div>
+      <div>
+        {(<Icon name="clock" />)}
+        <div>
+          <h2>Phone</h2>
+          <p>+1 234 567 890</p>
+        </div>
+      </div>
+      <div>
+        {(<Icon name="clock" />)}
+        <div>
+          <h2>Phone</h2>
+          <p>+1 234 567 890</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <Icon name="location-icon" size="2rem" />
+      <div>
+        <h2>Phone</h2>
+        <p>+1 234 567 890</p>
+      </div>
+    </div>
+  </section>
+</article>
+
+<section class="img_grid"></section>
+
+<style>
+  .img_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .img_grid::before {
+    content: "";
+    background-color: var(--primary-color-2);
+  }
+
+  .img_grid::after {
+    content: "";
+    background-image: url();
+  }
+</style>
